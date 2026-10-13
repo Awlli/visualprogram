@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com" xmlns:fx="http://javafx.com" fx:controller="com.example.taskmanager.HelloController">
+    <top>
+        <ToolBar>
+            <items>
+                <Button text="➕ Добавить быстро" onAction="#handleAddTask" />
+                <Button text="❌ Удалить выбранную" onAction="#handleDeleteTask" />
+                <Separator />
+                <Label text="Поиск: " />
+                <TextField fx:id="searchField" promptText="Введите название..." />
+                <Label text=" Статус: " />
+                <ComboBox fx:id="filterStatusComboBox" />
+            </items>
+        </ToolBar>
+    </top>
+    <center>
+        <TableView fx:id="taskTable">
+            <columns>
+                <TableColumn fx:id="titleColumn" text="Название задачи" prefWidth="280.0" />
+                <TableColumn fx:id="priorityColumn" text="Приоритет" prefWidth="120.0" />
+                <TableColumn fx:id="dateColumn" text="Срок выполнения" prefWidth="130.0" />
+                <TableColumn fx:id="statusColumn" text="Статус" prefWidth="140.0" />
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox style="-fx-padding: 5; -fx-background-color: #eee;"><Label fx:id="statusLabel" text="Система готова к работе." /></HBox>
+    </bottom>
+</BorderPane>
